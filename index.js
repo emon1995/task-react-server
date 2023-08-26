@@ -27,6 +27,10 @@ app.post('/upload', upload.array('files', 5), (req, res) => {
     res.status(200).json({ message: 'Files uploaded successfully' });
 });
 
+app.get("/", (req, res) => {
+    res.json("File Upload server");
+})
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
