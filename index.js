@@ -6,7 +6,12 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors());
+const corsOptions = {
+    origin: 'https://task-react-seven.vercel.app',
+    optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 // Configure multer for file uploads
 const storage = multer.diskStorage({
